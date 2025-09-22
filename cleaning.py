@@ -1,23 +1,30 @@
 import pandas as pd
-# tags = pd.read_csv('tags-20210226.csv')
-# works = pd.read_csv('works-20210226.csv')
-# print(tags.head())
-# print(tags.shape)
-# print(tags.dtypes)
 
-# tags = tags[~tags['name'].str.contains('Redacted', na=True)]
-# print(tags.shape)
-# print(tags.dtypes)
+# Removing redacted tags
+# Commented because this was resolved
+'''
+tags = pd.read_csv('tags-20210226.csv')
+works = pd.read_csv('works-20210226.csv')
+print(tags.head())
+print(tags.shape)
+print(tags.dtypes)
 
-# tags['merger_id'] = tags['merger_id'].astype('Int64')
-# print(tags.dtypes)
+tags = tags[~tags['name'].str.contains('Redacted', na=True)]
+print(tags.shape)
+print(tags.dtypes)
 
-# tags.to_csv("tags_cleaned.csv", index=False)
+#Change merger_id to Int64
+tags['merger_id'] = tags['merger_id'].astype('Int64')
+print(tags.dtypes)
+
+tags.to_csv("tags_cleaned.csv", index=False)
+'''
 
 
+# Add rows with merger_id to the actual row and drop that row
+# Commented because this was resolved
 
-
-# Read the cleaned tags file
+'''
 df = pd.read_csv('tags_cleaned.csv')
 print('Initial rows:', len(df))
 
@@ -67,3 +74,4 @@ orig_sum = df['cached_count'].sum()
 new_sum = df_merged['cached_count'].sum()
 print('Original total cached_count:', orig_sum)
 print('New total cached_count:', new_sum)
+'''
