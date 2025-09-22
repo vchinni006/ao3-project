@@ -1,0 +1,6 @@
+# ignore CSV data files
+*.csv
+*.csv:Zone.Identifier
+# ignore other large/unwanted
+*.zip
+*.tar
